@@ -23,7 +23,7 @@ export default class PromiseMath implements IPromiseMath {
     public doWeirdMath(expression): Promise<number> {
         return this.mathFromString(expression)
             .then((res: string) => {
-                return this.mathFromString(`${res}*2`);
+                return this.mathFromString(`${res}/2`);
             })
             .then((res: string) => {
                 return this.mathFromString(`${res}^2`);

@@ -30,20 +30,16 @@ describe("MathPromise", function () {
             });
     });
 
-    it("should be able to use the result from doNormalMath in another call to PromiseMath", () => {
-        const expr = "sqrt(9) * 4";
-        return math.doNormalMath(expr)
+    it("should be able to correctly execute doWeirdMath", () => {
+        const expr = "4 * 3";
+        return math.doWeirdMath(expr)
             .then((res: number) => {
-                const resAsStr = String(res);
-                const newExpr = `${resAsStr} / 4`;
-                return math.doNormalMath(newExpr);
+                // remember, doWeirdMath takes the expression, multiplies it by two, and raises it to the power of 2
+                return expect(res).to.equal(576);
             })
-            .then((res: number) => {
-                return expect(res).to.equal(3)
+            .catch((err: any) => {
+                expect.fail(`Failed to compute doWeirdMath(${expr}) with error: ${err}`);
             })
-            .catch((err: any) =>  {
-                expect.fail(`Failed to use result of PromiseMath with error: ${err}`)
-            });
     });
 
 });
