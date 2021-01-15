@@ -1,4 +1,4 @@
-# CPSC 310: Introduction to TypeScript
+# CPSC 310: Debugging Basics
 
 This repo contains the starter files for the TODO
 offered by CPSC 310: Introduction to Software Engineering, at UBC. 
