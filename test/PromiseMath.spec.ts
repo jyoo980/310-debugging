@@ -15,7 +15,7 @@ describe("MathPromise", function () {
                 return expect(res).to.equal(5 + 9);
             })
             .catch((err: any) => {
-                expect.fail(`Failed to compute ${expr} with error: ${err}`);
+                return expect.fail(`Failed to compute ${expr} with error: ${err}`);
             });
     });
 
@@ -26,7 +26,7 @@ describe("MathPromise", function () {
                 return expect(results).to.deep.equal([6, 33, -5])
             })
             .catch((err: any) => {
-                expect.fail(`Failed to compute ${exprs} with error: ${err}`)
+                return expect.fail(`Failed to compute ${exprs} with error: ${err}`)
             });
     });
 
@@ -38,7 +38,7 @@ describe("MathPromise", function () {
                 return expect(res).to.equal(576);
             })
             .catch((err: any) => {
-                expect.fail(`Failed to compute doWeirdMath(${expr}) with error: ${err}`);
+                return expect.fail(`Failed to compute doWeirdMath(${expr}) with error: ${err}`);
             })
     });
 
